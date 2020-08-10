@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+ {% load filters %}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neunapp</title>
+  <style>
+    .bloque {
+      border: 1px solid green;
+      padding: 1em;
+      margin: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lista Anuncios</h1>
+
+  
+  {% for anuncio in anuncios %}
+    <div class="bloque">
+      <p> {{ anuncio.title | resaltar_texto }} </p>
+      <p> {{ anuncio.content }} </p>
+      <p> {{ anuncio.amount | precio}} </p>
+    </div>
+  {% endfor %}
+    
+</body>
+</html>
